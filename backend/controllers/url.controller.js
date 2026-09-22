@@ -46,7 +46,7 @@ const createShortUrl = async (req, res) => {
       message: "Short URL created successfully",
       originalUrl: newUrl.originalUrl,
       shortCode: newUrl.shortCode,
-      shortUrl: `http://localhost:5000/${newUrl.shortCode}`
+      shortUrl: `${process.env.BACKEND_URL || "http://localhost:5000"}/${newUrl.shortCode}`
     });
 
   } catch (error) {
